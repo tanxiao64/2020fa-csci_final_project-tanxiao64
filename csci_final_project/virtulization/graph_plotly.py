@@ -18,4 +18,7 @@ def plot_csv_result(df, title, filename, file_path):
 
 def read_csv_file_and_plot(filename, file_path, graph_title='PnL Curve'):
     df = filehandler.loadCSV(filename, file_path)
-    plot_csv_result(df, graph_title, filename + '_graph', file_path)
+    plot_csv_result(df, graph_title, filename.split('.')[0] + '_graph', file_path)
+
+# read_csv_file_and_plot('sample.csv', 'data/')
+# read_csv_file_and_plot('best_trades.csv', 'data/')

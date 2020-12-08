@@ -1,5 +1,4 @@
 from functools import lru_cache
-from itertools import product
 from deap import creator, base, tools, algorithms
 import random
 import numpy as np
@@ -11,55 +10,12 @@ from csci_final_project.dataloader import filehandler
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 creator.create("Individual", list, fitness=creator.FitnessMax)
 
-class OptimizationSetting:
-    """
-    Setting class.
-    """
-
-    def __init__(self):
-        """"""
-        self.params = {}
-        self.target_name = ""
-
-
-    def add_parameter(
-        self, name: str, start: float, end: float = None, step: float = None
-    ):
-        """"""
-
-        value = start
-        value_list = []
-
-        while value+step <= end:
-            value_list.append((value, value+step))
-            value += step
-
-        self.params[name] = value_list
-
-    def set_target(self, target_name: str):
-        """"""
-        self.target_name = target_name
-
-    def generate_setting_ga(self):
-        """"""
-        settings_ga = []
-        keys = self.params.keys()
-        values = self.params.values()
-        products = list(product(*values))
-
-        for p in products:
-            setting = dict(zip(keys, p))
-            param = [tuple(i) for i in setting.items()]
-            settings_ga.append(param)
-
-        return settings_ga
-
 
 class GeneticAlgorithm:
 
-    def __init__(self, filename, filepath):
+    def __init__(self, filename, filepath, target_name='pnl'):
         self.data = filehandler.loadCSV(filename, filepath)
-        self.target_name = 'pnl'
+        self.target_name = target_name
         self.results = []
         self.filename = filename
         self.filepath = filepath

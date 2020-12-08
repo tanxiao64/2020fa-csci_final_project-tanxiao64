@@ -37,13 +37,13 @@ validate_data = PythonOperator(
 run_optimization = PythonOperator(
     task_id='run_optimization',
     python_callable=cli.main,
-    op_kwargs={'optimizer': ga.run_ga_optimization, 'filename': filename},
+    op_kwargs={'optimizer': ga, 'filename': filename},
     dag=dag,
 )
 
 output_optimized_graphs = PythonOperator(
     task_id='output_graphs',
-    python_callable=graphPlotly.plot_csv_result,
+    python_callable=graphPlotly.read_csv_file_and_plot,
     op_kwargs={},
     dag=dag,
 )

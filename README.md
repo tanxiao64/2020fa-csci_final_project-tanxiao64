@@ -1,5 +1,5 @@
 # csci_final_project
 
-## Start your docs here
+## Abstract
 
-Doc details...
+This repository displays the coding work for my final project. The project is still under development with only some working samples.

@@ -13,7 +13,7 @@ creator.create("Individual", list, fitness=creator.FitnessMax)
 
 class OptimizationSetting:
     """
-    Setting for runnning optimization.
+    Setting class.
     """
 
     def __init__(self):

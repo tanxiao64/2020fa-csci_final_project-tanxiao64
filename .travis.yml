@@ -30,6 +30,3 @@ jobs:
       script: pytest --cov-report xml --cov-report term
       after_script:
         - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-    - stage: answers
-      script:
-      - python3 -m csci_final_project

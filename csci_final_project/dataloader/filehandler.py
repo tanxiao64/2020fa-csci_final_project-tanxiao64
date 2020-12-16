@@ -26,6 +26,7 @@ def file_exist(filename, file_path=None, use_salt=False, **kwargs):
         raise FileNotFoundError()
     return True
 
+
 def validate(filename, file_path=None, use_salt=False, **kwargs):
     if use_salt:
         filename = Variable.get("salt") + filename

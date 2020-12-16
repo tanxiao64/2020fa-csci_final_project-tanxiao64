@@ -14,7 +14,7 @@ def generate_fake_output(
     file_path,
     init_start_date="1/1/2000",
     init_end_date="1/2/2000",
-    use_salt=False
+    use_salt=False,
 ):
     """
     Generate fake backtest output csv files. Attach 'salt' to the file name.

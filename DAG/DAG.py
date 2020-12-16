@@ -34,7 +34,7 @@ generate_mock_backtest_output = PythonOperator(
         "row_num": 7000,
         "filename": filename,
         "file_path": file_path,
-        "use_salt": True
+        "use_salt": True,
     },
     dag=dag,
 )

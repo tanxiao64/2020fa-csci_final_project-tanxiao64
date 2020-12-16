@@ -24,15 +24,15 @@ In this project, I am building two components:
 
 
 ## Project Structure
-* `data/` contains all input & output of the project, such as backtest output, optimized output, graphs etc
-* `DAG/` contains the Airflow dags to be deployed in the Airflow dag folder
+* `data/` contains all input & output of the project, such as backtest output, optimized output, graphs etc.
+* `DAG/` contains the Airflow dags to be deployed in the Airflow dag folder.
 * `csci_final_project/optimizer` contains different classes of optimizers and related classes. They are used to run the 
-optimization process
-* `csci_final_project/mockbacktest` contains the fake backtest generator which produces random backtest results but in standard format
+optimization process.
+* `csci_final_project/mockbacktest` contains the fake backtest generator which produces random backtest results but in standard format.
 * `csci_final_project/dataloader` handles data read & write. Can be extended to other file format.
 * `csci_final_project/utils` the general folder for utilities. It contains the salted graph util.
 * `csci_final_project/virtulization` contains graphing tools. Currently only plotly is used.
-* `csci_final_project/tests` pytest test cases
+* `csci_final_project/tests` pytest test cases.
 
 ## Workflow
 The workflow is shown in the Airflow DAG below -
@@ -68,7 +68,7 @@ is especially handy.
 * I used memorization in the optimizer to avoid repeat calculation. (the @lru_cache decorator) 
 * I used oop pattern to write optimizers so that it is easy to isolate result and modify the workflow. 
 The user can also add or modify the optimizers without potentially break other parts.
-* I used cookiecutter to build the structure of the project
+* I used cookiecutter to build the structure of the project.
 
 ## Caveats
 Airflow itself is in Python and has to run as a server to trigger/scheduler the DAGs. So it is hard to maintain a single 

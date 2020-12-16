@@ -3,13 +3,18 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+
 [packages]
 pandas = "*"
 numpy = "*"
 deap = "*"
 plotly = "*"
-
-[dev-packages]
+dask = {extras = ["dataframe"], version = "*"}
+importlib-metadata = "1.7.0"
+apache-airflow = "*"
 
 [requires]
 python_version = "3.7"

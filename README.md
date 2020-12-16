@@ -1,7 +1,8 @@
 # CSCI Final Project
 
 [![Build Status](https://travis-ci.com/tanxiao64/2020fa-csci_final_project-tanxiao64.svg?branch=master)](https://travis-ci.com/tanxiao64/2020fa-csci_final_project-tanxiao64)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/d3b0cb677db44e613b26/maintainability)](https://codeclimate.com/github/tanxiao64/2020fa-csci_final_project-tanxiao64/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d3b0cb677db44e613b26/test_coverage)](https://codeclimate.com/github/tanxiao64/2020fa-csci_final_project-tanxiao64/test_coverage)
 
 ## Abstract
 
@@ -34,7 +35,7 @@ optimization process
 * `csci_final_project/tests` pytest test cases
 
 ## Workflow
-The workflow is shown in the Airflow DAG below
+The workflow is shown in the Airflow DAG below -
 ![alt text](https://github.com/tanxiao64/2020fa-csci_final_project-tanxiao64/blob/master/airflow_screenshot.png?raw=true)
 
 
@@ -44,6 +45,8 @@ To run the workflow, just trigger the dag. The full cycle of backtest optimizati
 After the run, the user can go to the `data` folder and find the backtest sample file *sample.csv, the optimized backtest
 file *best_trades_ga.csv(Genetic Algo) and *best_trades_bf.csv(Brute Force), the corresponding graphs *best_trades_ga_graph.html
 and *best_trades_bf_graph.html.
+
+To quickly setup Airflow, please reference https://airflow.apache.org/docs/apache-airflow/stable/start.html
 
 ## Topics from the Course
 ### How salt is added?

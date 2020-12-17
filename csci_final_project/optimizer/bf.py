@@ -7,7 +7,7 @@ from csci_final_project.dataloader import filehandler
 
 class Bruteforce:
     """
-    The Brute Force optimizer
+    The Brute Force optimizer. This optimizer search the full search space and max the objective function
     """
 
     def __init__(self, filename, filepath, target_name="pnl"):
@@ -76,6 +76,9 @@ class Bruteforce:
         return results
 
     def output_data_best_signal(self, output_filename):
+        """
+        Output optimized data to csv
+        """
         data_filtered = self.data.copy()
         for col, val in self.results[-1][0]:
             lower = val[0]

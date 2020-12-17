@@ -12,7 +12,7 @@ def main(
     use_salt=False,
 ):  # pragma: no cover
     """
-    Create settings and run optimization based on the pass in optimizer
+    Create settings and run optimization based on the passed in optimizer
     """
     setting = OptimizationSetting()
     setting.set_target(target)

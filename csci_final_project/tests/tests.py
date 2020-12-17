@@ -20,7 +20,9 @@ from datetime import datetime
 
 class FilehandlerTest(TestCase):
     def test_filehandler(self):
-        """"""
+        """
+        Test file read and write functions
+        """
         with TemporaryDirectory() as tmp:
             filename = "asdf.csv"
             file_path = tmp + "/"
@@ -42,7 +44,9 @@ class FilehandlerTest(TestCase):
 
 class BacktestProducerTest(TestCase):
     def test_BacktestProducer(self):
-        """"""
+        """
+        Check if the backtest producer generate files in the correct format
+        """
         with TemporaryDirectory() as tmp:
             filename = "asdf.csv"
             file_path = tmp
@@ -58,7 +62,9 @@ class BacktestProducerTest(TestCase):
 
 class GraphPlotlyTest(TestCase):
     def test_GraphPlotly(self):
-        """"""
+        """
+        Check if the graphing utilities works - plotly
+        """
         with TemporaryDirectory() as tmp:
             filename = "asdf.csv"
             file_path = tmp
@@ -72,6 +78,9 @@ class GraphPlotlyTest(TestCase):
 
 class OptimizationSettingsTest(TestCase):
     def testOptimizationSettings(self):
+        """
+        Test the optimizationSetting class. Check if it can produce correct search space
+        """
         setting = OptimizationSetting()
         setting.set_target("pnl")
         setting.add_parameter("signal_1", start=0, end=1, step=0.1)
@@ -80,8 +89,11 @@ class OptimizationSettingsTest(TestCase):
         self.assertEqual(len(setting.generate_setting_bf()), 50)
 
 
-class GeneticAlgorithmTest(TestCase):
-    def testGeneticAlgorithm(self):
+class OptimizerTest(TestCase):
+    def testOptimizers(self):
+        """Check if the implementation of optimizers work
+        Compare if results are the same among optimizers
+        """
         with TemporaryDirectory() as tmp:
             filename = "asdf.csv"
             file_path = tmp

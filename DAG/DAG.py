@@ -16,6 +16,7 @@ default_args = {
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
 }
+# define dag parameters. no need to add scheduler
 dag = DAG(
     "run_optimizer",
     default_args=default_args,
@@ -26,6 +27,7 @@ dag = DAG(
 filename = "sample.csv"
 file_path = "/Users/xiaotan/Course/2020fa-csci_final_project-tanxiao64/data/"
 
+# define tasks below
 generate_mock_backtest_output = PythonOperator(
     task_id="generate_mock_backtest_output",
     python_callable=backtest_output_producer.generate_fake_output,
@@ -109,7 +111,7 @@ output_original_graphs = PythonOperator(
     dag=dag,
 )
 
-
+# define the dependency graph
 generate_mock_backtest_output >> check_data_exist >> validate_data >> run_optimization_ga >> output_optimized_graphs_ga
 validate_data >> run_optimization_bf >> output_optimized_graphs_bf
 validate_data >> output_original_graphs

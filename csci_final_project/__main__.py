@@ -8,6 +8,10 @@ from csci_final_project.optimizer.ga import GeneticAlgorithm
 from csci_final_project.optimizer.bf import Bruteforce
 
 if __name__ == "__main__":  # pragma: no cover
+    """
+    The command line entry point. This will run a mini sample workflow - Generate sample backtest file, run optimizers,
+    and produce the results.
+    """
     file_path = "data1/"
     if not os.path.exists(file_path):
         os.makedirs(file_path)

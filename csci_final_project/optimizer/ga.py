@@ -59,11 +59,9 @@ class GeneticAlgorithm:
 
         # Define parameter generation function
         def generate_parameter():
-            """"""
             return random.choice(settings)
 
         def mutate_individual(individual, indpb):
-            """"""
             size = len(individual)
             paramlist = generate_parameter()
             for i in range(size):
@@ -128,6 +126,9 @@ class GeneticAlgorithm:
         return results
 
     def output_data_best_signal(self, output_filename):
+        """
+        Output optimized data to csv
+        """
         data_filtered = self.data.copy()
         for col, val in self.results[0][0].items():
             lower = val[0]
